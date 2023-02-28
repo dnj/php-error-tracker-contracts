@@ -2,7 +2,9 @@
 
 namespace dnj\ErrorTracker\Contracts;
 
-interface IDevice extends IHasOwner
+use dnj\AAA\Contracts\IOwnerableModel;
+
+interface IDevice extends IOwnerableModel
 {
     public function getId(): int;
 
@@ -11,7 +13,7 @@ interface IDevice extends IHasOwner
     /**
      * @return array<string,mixed>|null
      */
-    public function getExtra(): ?array;
+    public function getMeta(): ?array;
 
     public function getCreatedAt(): \DateTimeInterface;
 
